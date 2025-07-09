@@ -1,0 +1,97 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <h3>Listing Details :</h3>
+    <ul>
+<li><%= listing.title %></li>
+<li><%= listing.description %></li>
+<li>&#8377;<%= listing.price.toLocaleString("en-IN") %></li>
+<li><%= listing.location %></li>
+<li><%= listing.country %></li>
+    </ul>
+    <br>
+    <a href="/listings/<%= listing._id %>/edit">Edit Listing</a>
+
+        <!-- <form class="edit-form" method="GET" action="/listings/<%= listing._id %>/edit">
+          <button class="edit-btn">Edit</button>
+        </form> -->
+        <form method="POST" action="/listings/<%= listing._id%>?_method=DELETE">
+    <button type="submit" >Delete</button>
+    </form>
+</body>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WanderLust - Listing Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f8;
+      padding: 30px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #555;
+    }
+
+    .value {
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Listing Details</h3>
+    <ul>
+      <li><span class="label">Title:</span> <span class="value"><%= listing.title %></span></li>
+      <li><span class="label">Description:</span> <span class="value"><%= listing.description %></span></li>
+      <li><span class="label">Price:</span> <span class="value">&#8377;<%= listing.price.toLocaleString("en-IN") %></span></li>
+      <li><span class="label">Location:</span> <span class="value"><%= listing.location %></span></li>
+      <li><span class="label">Country:</span> <span class="value"><%= listing.country %></span></li>
+    </ul>
+  </div>
+  
+  <form method="POST" action="/listings/<%= listing._id%>?_method=DELETE">
+    <button type="submit" >Delete</button>
+    </form>
+</body>
+</html> -->
